@@ -1,0 +1,31 @@
+[package]
+name = "matching_engine"
+version = "0.1.0"
+edition = "2024"
+description = "Order matching engine for trading systems"
+license = "MIT"
+repository = "https://github.com/bikbov/exchange_api"
+keywords = ["trading", "finance", "matching-engine", "exchange", "orders"]
+categories = ["finance", "algorithms"]
+
+[dependencies]
+axum = { version = "0.8.3", features = ["ws", "json"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1", features = ["serde", "v4"] }
+futures = "0.3.31"
+chrono = { version = "0.4", features = ["serde"] }
+
+
+[lints.clippy]
+all = "warn"
+correctness = "warn"
+suspicious = "warn"
+style = "warn"
+complexity = "warn"
+perf = "warn"
+pedantic = "warn"
+nursery = "warn"
+
+
