@@ -31,4 +31,5 @@ stop orders
 iceberg orders
 cancel orders
 batch execution (rbt?)
+idiomatic Rust code (loops to Iter and Stream)
 ```
