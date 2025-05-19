@@ -13,7 +13,7 @@ pub fn send_data(
 }
 
 fn send_deals(db_sender: &broadcast::Sender<DealBook>, dealbook: DealBook) {
-    if db_sender.send(dealbook).is_err() {
+    if !dealbook.deals.is_empty() && db_sender.send(dealbook).is_err() {
         println!("Error_dealbook");
     }
 }

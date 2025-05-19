@@ -72,7 +72,7 @@ impl OrderBook {
         if let Some(ask_order) = self.asks.pop() {
             Self::subtract_asks_book_quantity(self, ask_order.current_quantity, ask_order.price);
             dealbook.push(
-                bid_order.price,
+                ask_order.price,
                 ask_order.current_quantity,
                 ask_order.id,
                 bid_order.id,
@@ -119,7 +119,7 @@ impl OrderBook {
             }
 
             dealbook.push(
-                bid_order.price,
+                ask_order.price,
                 bid_order.current_quantity,
                 ask_order.id,
                 bid_order.id,
