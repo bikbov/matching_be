@@ -1,27 +1,34 @@
 Demo: https://alicebob.ru/
 
-Price-Time Priority algorithm 
+Price-Time Priority algorithm
 
 ## Build ##
 ```
-docker build -t matching_engine .
-docker save -o matching_engine.tar matching_engine
-gzip matching_engine.tar
-scp -P port matching_engine.tar.gz user@ip:.
-rm matching_engine.tar.gz
+docker build -t matching_be .
+docker save -o matching_be.tar matching_be
+gzip matching_be.tar
+scp -P 56929 matching_be.tar.gz root@62.60.246.253:.
+rm matching_be.tar.gz
 ```
 
 ## Deploy ##
 ```
-ssh user@ip -p port
-docker stop matching_engine
-docker rmi matching_engine
-gunzip matching_engine.tar.gz
-docker load -i matching_engine.tar
-rm matching_engine.tar
-docker run --rm -d --network exch --name matching_engine matching_engine
+ssh root@62.60.246.253 -p 56929
+docker stop matching_be
+docker rmi matching_be
+gunzip matching_be.tar.gz
+docker load -i matching_be.tar
+rm matching_be.tar
+docker run --rm -d --network exch --name matching_be matching_be
 ```
 
 
-todo: improve tests  
-
+todo: 
+```
+more tests
+market orders
+stop orders
+iceberg orders
+cancel orders
+batch execution (rbt?)
+```
