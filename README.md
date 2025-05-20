@@ -58,4 +58,4 @@ todo priority:
 6. stop orders
 7. iceberg orders
 ```
-
+Currently, two data structures are used: one for fast matching, the other for fast display of the glass, think about whether it is possible to get by with one
