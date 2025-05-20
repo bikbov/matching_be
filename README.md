@@ -23,13 +23,39 @@ docker run --rm -d --network exch --name matching_be matching_be
 ```
 
 
-todo: 
+Demo: https://alicebob.ru/
+
+Price-Time Priority algorithm
+
+## Build ##
 ```
-more tests
-market orders
-stop orders
-iceberg orders
-cancel orders
-batch execution (rbt?)
-idiomatic Rust code (loops to Iter and Stream)
+docker build -t matching_be .
+docker save -o matching_be.tar matching_be
+gzip matching_be.tar
+scp -P 56929 matching_be.tar.gz root@62.60.246.253:.
+rm matching_be.tar.gz
 ```
+
+## Deploy ##
+```
+ssh root@62.60.246.253 -p 56929
+docker stop matching_be
+docker rmi matching_be
+gunzip matching_be.tar.gz
+docker load -i matching_be.tar
+rm matching_be.tar
+docker run --rm -d --network exch --name matching_be matching_be
+```
+
+
+todo priority: 
+```
+1. batch execution (is it nessesary? rbt?)
+2. cancel orders
+3. more tests
+4. idiomatic Rust code (loops to Iter and Stream)
+5. market orders
+6. stop orders
+7. iceberg orders
+```
+
