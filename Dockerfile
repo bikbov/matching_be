@@ -1,4 +1,4 @@
-ARG BINARY_NAME_DEFAULT=matching_engine
+ARG BINARY_NAME_DEFAULT=matching_be
 ARG MY_GREAT_CONFIG_DEFAULT="someconfig-default-value"
 
 FROM clux/muslrust:stable AS builder
@@ -31,4 +31,4 @@ ENV MY_GREAT_CONFIG=$MY_GREAT_CONFIG_DEFAULT
 ENV RUST_LOG="error,$BINARY_NAME=info"
 COPY --from=builder /build-out/$BINARY_NAME /
 
-CMD ["/matching_engine"]
+CMD ["/matching_be"]
