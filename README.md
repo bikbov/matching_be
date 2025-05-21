@@ -7,13 +7,13 @@ Price-Time Priority algorithm
 docker build -t matching_be .
 docker save -o matching_be.tar matching_be
 gzip matching_be.tar
-scp -P 56929 matching_be.tar.gz root@62.60.246.253:.
+scp -P 56929 matching_be.tar.gz root@aeserver:.
 rm matching_be.tar.gz
 ```
 
 ## Deploy ##
 ```
-ssh root@62.60.246.253 -p 56929
+ssh root@aeserver -p 56929
 docker stop matching_be
 docker rmi matching_be
 gunzip matching_be.tar.gz
@@ -32,13 +32,13 @@ Price-Time Priority algorithm
 docker build -t matching_be .
 docker save -o matching_be.tar matching_be
 gzip matching_be.tar
-scp -P 56929 matching_be.tar.gz root@62.60.246.253:.
+scp -P 56929 matching_be.tar.gz root@aeserver:.
 rm matching_be.tar.gz
 ```
 
 ## Deploy ##
 ```
-ssh root@62.60.246.253 -p 56929
+ssh root@aeserver -p 56929
 docker stop matching_be
 docker rmi matching_be
 gunzip matching_be.tar.gz
@@ -57,5 +57,6 @@ todo priority:
 5. market orders
 6. stop orders
 7. iceberg orders
+8. One data structure for matching and fast orderbook?
 ```
-Currently, two data structures are used: one for fast matching, the other for fast display of the glass, think about whether it is possible to get by with one
+
