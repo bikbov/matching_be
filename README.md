@@ -22,15 +22,11 @@ rm matching_be.tar
 docker run --rm -d --network exch --name matching_be matching_be
 ```
 
-   
-
-
 todo priority: 
 ```
-1. batch execution (rbt?)
-2. cancel orders
-3. more tests
-4. idiomatic Rust code (loops to Iter and Stream)
-5. market orders
+1. batch execution (rbt?)  
+2. cancel orders  
+3. market orders  
+4. more tests  
+5. idiomatic Rust code (loops to Iter and Stream)  
 ```
-
