@@ -18,7 +18,7 @@ pub struct AppState {
     dealbook_receiver: Arc<broadcast::Receiver<DealBook>>,
 }
 
-#[deny(unsafe_code)]
+#[forbid(unsafe_code)]
 #[tokio::main]
 async fn main() {
     let port = 28103_u16;
