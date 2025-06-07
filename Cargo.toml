@@ -3,7 +3,6 @@ name = "matching_be"
 version = "0.1.0"
 edition = "2024"
 description = "Order matching engine for trading systems"
-license = "GLWT"
 repository = "https://github.com/bikbov/matching_be"
 keywords = ["trading", "finance", "matching-engine", "exchange", "orders"]
 categories = ["finance", "algorithms"]
