@@ -12,8 +12,7 @@ RUN groupadd -g 10001 -r dockergrp && \
 
 FROM scratch
 ARG BINARY_NAME_DEFAULT
-COPY --from=builder /etc/passwd /etc/passwd
-COPY --from=builder /etc/group /etc/group
+COPY --from=builder /etc/passwd /etc/group  /etc/
 COPY --from=builder /build_out/$BINARY_NAME_DEFAULT /
 USER dockeruser
 CMD ["/matching_be"]
