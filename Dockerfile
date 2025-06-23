@@ -15,4 +15,4 @@ ARG BINARY_NAME_DEFAULT
 COPY --from=builder /etc/passwd /etc/group  /etc/
 COPY --from=builder /build_out/$BINARY_NAME_DEFAULT /
 USER dockeruser
-CMD ["/matching_be"]
+ENTRYPOINT ["/matching_be"]
